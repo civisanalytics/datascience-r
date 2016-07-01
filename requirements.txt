@@ -39,3 +39,9 @@ scam
 testthat
 knitr
 rmarkdown
+gbm
+lubridate
+e1071
+zoo
+randomForest
+xgboost
