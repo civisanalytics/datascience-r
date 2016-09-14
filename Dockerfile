@@ -11,6 +11,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
         libssl-dev \
         libcurl4-openssl-dev \
         libssh2-1-dev \
+        pandoc \
         r-base-core=${R_VERSION}* \
         r-base-dev=${R_VERSION}* \
         r-recommended=${R_VERSION}*
