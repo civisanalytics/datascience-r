@@ -12,7 +12,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
         libcurl4-openssl-dev \
         libssh2-1-dev \
         pandoc \
-        openjdk-7-* \
+        default-jdk \
         r-base-core=${R_VERSION}* \
         r-base-dev=${R_VERSION}* \
         r-recommended=${R_VERSION}*
