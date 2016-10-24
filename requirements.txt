@@ -45,3 +45,6 @@ e1071
 zoo
 randomForest
 xgboost
+caret
+mboost
+extraTrees
