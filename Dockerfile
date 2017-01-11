@@ -13,6 +13,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
         libssh2-1-dev \
         pandoc \
         default-jdk \
+        libxml2-dev \
         r-base-core=${R_VERSION}* \
         r-base-dev=${R_VERSION}* \
         r-recommended=${R_VERSION}*
