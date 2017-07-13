@@ -1,0 +1,3 @@
+civis==1.5.2
+pubnub==4.0.12
+joblib==0.11
