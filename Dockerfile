@@ -24,10 +24,11 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # tuck the python client here just in case
-RUN export LC_ALL=C.UTF-8 && export LANG=C.UTF-8
-RUN curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
+RUN export CIVIS_PYTHON_VERSION=1.5.2 && \
+    export LC_ALL=C.UTF-8 && export LANG=C.UTF-8 && \
+    curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
     python3 get-pip.py && \
-    pip3 install civis && \
+    pip3 install civis==${CIVIS_PYTHON_VERSION} && \
     rm -rf ~/.cache/pip && \
     rm -f get-pip.py
 
