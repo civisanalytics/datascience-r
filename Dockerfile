@@ -21,6 +21,14 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+# tuck the python client here just in case people want it
+RUN export LC_ALL=C.UTF-8 && export LANG=C.UTF-8
+RUN curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
+    python3 get-pip.py && \
+    pip3 install -q civis && \
+    rm -rf ~/.cache/pip && \
+    rm -f get-pip.py
+
 RUN echo 'options(repos = c(CRAN = "https://cran.rstudio.com/"), download.file.method = "libcurl")' >> /etc/R/Rprofile.site
 
 COPY ./requirements.txt /requirements.txt
