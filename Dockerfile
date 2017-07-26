@@ -11,6 +11,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
         libssl-dev \
         libcurl4-openssl-dev \
         libssh2-1-dev \
+        locales \
         pandoc \
         default-jdk \
         libxml2-dev \
@@ -22,6 +23,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
         r-recommended=${R_VERSION}* && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Make unicode work. See https://stackoverflow.com/a/38553499
+RUN locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8
+ENV LANG=en_US.UTF-8
 
 # tuck the python client here just in case
 COPY ./requirements-python.txt /requirements-python.txt
