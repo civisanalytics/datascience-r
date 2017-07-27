@@ -24,7 +24,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Make unicode work. See https://stackoverflow.com/a/38553499
+# Make unicode works by setting locale environment variables.
+# Note: the update-locale command is probably not necessary since it only
+# affects fresh logins but is probably worth including for consistency with the
+# environment locale set in the next command.
 RUN locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 ENV LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
