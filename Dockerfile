@@ -24,14 +24,16 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Make unicode work. See https://stackoverflow.com/a/38553499
-RUN locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8
-ENV LANG=en_US.UTF-8
+# Make unicode works by setting locale environment variables.
+# Note: the update-locale command is probably not necessary since it only
+# affects fresh logins but is probably worth including for consistency with the
+# environment locale set in the next command.
+RUN locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+ENV LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
 # tuck the python client here just in case
 COPY ./requirements-python.txt /requirements-python.txt
-RUN export LC_ALL=C.UTF-8 && export LANG=C.UTF-8 && \
-    curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
+RUN curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
     python3 get-pip.py && \
     pip3 install -r requirements-python.txt && \
     rm -rf ~/.cache/pip && \
