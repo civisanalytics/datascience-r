@@ -42,3 +42,4 @@ RUN curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
 RUN echo 'options(repos = c(CRAN = "https://cran.rstudio.com/"), download.file.method = "libcurl")' >> /etc/R/Rprofile.site
 COPY ./requirements.txt /requirements.txt
 RUN Rscript -e "packages <- readLines('/requirements.txt'); install.packages(packages)"
+RUN Rscript -e "devtools::install_github('civisanalytics/civis-r', ref = 'v0.9.1', upgrade_dependencies = FALSE);"
