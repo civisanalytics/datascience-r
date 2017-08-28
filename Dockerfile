@@ -1,6 +1,13 @@
 FROM rocker/verse:3.4.1
 MAINTAINER support@civisanalytics.com
 
+RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && \
+    apt-get install -y --no-install-recommends \
+        curl \
+        wget && \
+    apt-get clean -y && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 # tuck the python client here just in case
 COPY ./requirements-python.txt /requirements-python.txt
 RUN curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
