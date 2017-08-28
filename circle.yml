@@ -10,4 +10,4 @@ test:
     override:
         - docker run civisanalytics/datascience-r /bin/bash -c "echo BUILDS OK"
         - docker run civisanalytics/datascience-r Rscript -e "sessionInfo(package=NULL)"
-        - docker run civisanalytics/datascience-r python3 -c "import civis; print(civis.__version__)"
+        - docker run civisanalytics/datascience-r python -c "import civis; print(civis.__version__)"
