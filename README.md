@@ -33,7 +33,7 @@ docker run -i -t civisanalytics/datascience-r:latest /bin/bash
 
 You can run commands via
 ```bash
-docker run civisanalytics/datascience-r:latest Rscript -c "print('Hello World!')"
+docker run civisanalytics/datascience-r:latest Rscript -e "print('Hello World!')"
 ```
 
 The image contains environment variables which allow you to find
