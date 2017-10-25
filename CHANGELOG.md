@@ -7,6 +7,11 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A minor version will increase if one or more packages contained in the Docker image add new, backwards-compatible features, or if a new package is added to the Docker image.
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompabile changes in the execution environment.
 
+## [2.1.0] - 2017-10-25
+
+- Updated the public Civis API client, now floats to the CRAN version.
+- Updated R to 3.4.2 (minor)
+
 ## [2.0.0] - 2017-09-12
 
 ### Added
