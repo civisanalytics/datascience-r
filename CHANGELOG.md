@@ -1,3 +1,4 @@
+
 # Change Log
 
 All changes to this project will be documented in this file.
@@ -9,7 +10,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## [2.1.0] - 2017-10-25
 
-- Updated the public Civis API client, now floats to the CRAN version.
+- Updated civis-r to 1.0.2 (minor)
 - Updated R to 3.4.2 (minor)
 
 ## [2.0.0] - 2017-09-12
