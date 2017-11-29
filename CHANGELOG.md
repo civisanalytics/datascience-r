@@ -8,6 +8,15 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A minor version will increase if one or more packages contained in the Docker image add new, backwards-compatible features, or if a new package is added to the Docker image.
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompabile changes in the execution environment.
 
+## [2.3.0] - 2017-11-28
+
+- Update civis-r to 1.1.1
+- Update civis-python to 1.7.1
+
+## [2.2.0]
+
+- Update civis-r to 1.1.0
+
 ## [2.1.0] - 2017-10-25
 
 - Updated civis-r to 1.0.2 (minor)
