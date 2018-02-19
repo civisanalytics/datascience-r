@@ -11,6 +11,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 ## [2.4.1] - 2018-02-19
 
 - Update rocker/verse to 3.4.3 (#21).
+- Update civis-python to 1.8.1 (#21).
 
 ## [2.4.0] - 2018-01-25
 
