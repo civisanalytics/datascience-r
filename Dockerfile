@@ -1,4 +1,4 @@
-FROM rocker/verse:3.4.4
+FROM rocker/verse:3.5.0
 MAINTAINER support@civisanalytics.com
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && \
@@ -16,9 +16,9 @@ RUN curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
     rm -rf ~/.cache/pip && \
     rm -f get-pip.py
 
-RUN Rscript -e "devtools::install_github('civisanalytics/civis-r', ref = 'v1.3.0', upgrade_dependencies = FALSE);"
+RUN Rscript -e "devtools::install_github('civisanalytics/civis-r', ref = 'v1.4.0', upgrade_dependencies = FALSE);"
 
-ENV VERSION=2.5.0 \
+ENV VERSION=2.6.0 \
     VERSION_MAJOR=2 \
-    VERSION_MINOR=5 \
+    VERSION_MINOR=6 \
     VERSION_MICRO=0
