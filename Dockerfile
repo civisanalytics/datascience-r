@@ -18,6 +18,8 @@ RUN curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
 
 RUN Rscript -e "devtools::install_github('civisanalytics/civis-r', ref = 'v1.5.0', upgrade_dependencies = FALSE);"
 
+RUN Rscript -e "library(civis)"
+
 ENV VERSION=2.7.0 \
     VERSION_MAJOR=2 \
     VERSION_MINOR=7 \

@@ -57,16 +57,23 @@ docker build -t datascience-r:test .
 ```
 and describe any changes in the [change log](CHANGELOG.md).
 
-## For Maintainers
+# Tag a Release
 
-This repo has autobuild enabled. Any PR that is merged to master will
-be built as the `latest` tag on Dockerhub.
-Once you are ready to create a new version, go to the "releases" tab of the repository and click
-"Draft a new release". Github will prompt you to create a new tag, release title, and release
-description. The tag should use semantic versioning in the form "vX.X.X"; "major.minor.micro".
-The title of the release should be the same as the tag. Include a change log in the release description.
-Once the release is tagged, DockerHub will automatically build three identical containers, with labels
-"major", "major.minor", and "major.minor.micro".
+To integrate with Civis Platform, the following format for releases must be followed:
+
+1. Tag: vX.X.X (major.minor.micro).
+2. Title: vX.X.X
+
+The 'Description' field is not used in Civis Platform integration, but by convention it
+should have the following format:
+
+Description: [YYYY-MM-DD] followed by summary of changes.
+
+# For Maintainers
+
+This repo has autobuild enabled. Any PR that is merged to master will be built
+as the `latest` tag on Dockerhub. Once the release is tagged, DockerHub will
+automatically build three identical containers, with labels "major", "major.minor", and "major.minor.micro".
 
 # License
 
