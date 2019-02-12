@@ -10,7 +10,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## [2.8.0] - 2019-02-12
 
-- R -> 3.5.1
+- rocker/verse -> 3.5.2
 - civis-r -> 1.6.1
 - civis-python -> 1.9.3
 
