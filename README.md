@@ -57,6 +57,14 @@ docker build -t datascience-r:test .
 ```
 and describe any changes in the [change log](CHANGELOG.md).
 
+To maintain the stability of the packge environment, 
+update `requirements.txt` with the list of installed packages from the last released
+version.
+
+```r
+cat(paste0(rownames(installed.packages()), "\n"))
+```
+
 # Tag a Release
 
 To integrate with Civis Platform, the following format for releases must be followed:
