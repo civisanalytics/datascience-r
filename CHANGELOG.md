@@ -13,7 +13,8 @@ Version number changes (major.minor.micro) in this package denote the following:
 - rocker/verse -> 3.5.3
 - civis-r -> 2.0.0
 - civis-python -> 1.10.0
-- added `zoo` to `requirements.txt`
+- added `requirements.txt`
+- added package `zoo`
 
 ## [2.8.0] - 2019-02-12
 
