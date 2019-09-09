@@ -22,3 +22,8 @@ COPY ./requirements.txt /requirements.txt
 RUN Rscript -e 'install.packages(readLines("requirements.txt"))'
 
 RUN Rscript -e "library(civis)"
+
+ENV VERSION=3.1.0 \
+    VERSION_MAJOR=3 \
+    VERSION_MINOR=1 \
+    VERSION_MICRO=0
