@@ -14,6 +14,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 - rocker/verse -> 3.6.0
 - civis-r -> 2.1.0
+- civis-python -> 1.11.0
 
 ### Added
 - added buildspecs for autobuilding and pushing Docker image to Amazon ECR 
