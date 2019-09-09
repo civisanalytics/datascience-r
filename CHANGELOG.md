@@ -10,10 +10,15 @@ Version number changes (major.minor.micro) in this package denote the following:
 
 ## Unreleased
 
+## [3.1.0] - 2019-09-09
+
+- rocker/verse -> 3.6.0
+- civis-r -> 2.1.0
+
 ### Added
 - added buildspecs for autobuilding and pushing Docker image to Amazon ECR 
 
-# [3.0.0] - 2019-06-21
+## [3.0.0] - 2019-06-21
 
 - rocker/verse -> 3.5.3
 - civis-r -> 2.0.0
