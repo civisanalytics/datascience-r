@@ -23,14 +23,17 @@ RUN curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
     rm -rf ~/.cache/pip && \
     rm -f get-pip.py
 
-RUN Rscript -e "devtools::install_github('civisanalytics/civis-r', ref = 'v2.1.0', upgrade_dependencies = FALSE);"
+# set cran to be default backup to set MRAN repo
+#RUN echo "options(repos = c(options('repos'), 'https://cran.rstudio.com/'), download.file.method = 'libcurl')" >> /usr/local/lib/R/etc/Rprofile.site
+
+RUN Rscript -e "devtools::install_github('civisanalytics/civis-r', ref = 'v2.1.2');"
 
 COPY ./requirements.txt /requirements.txt
 RUN Rscript -e 'install.packages(readLines("requirements.txt"))'
 
 RUN Rscript -e "library(civis)"
 
-ENV VERSION=3.2.0 \
+ENV VERSION=3.2.1 \
     VERSION_MAJOR=3 \
     VERSION_MINOR=2 \
-    VERSION_MICRO=0
+    VERSION_MICRO=1
