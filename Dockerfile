@@ -9,9 +9,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
         libgdal-dev \
         libgeos-dev \
         libglu1-mesa-dev \
+        libsodium-dev \
         libx11-dev \
         mesa-common-dev \
-				libsodium-dev \
         wget && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -31,7 +31,7 @@ COPY ./requirements.txt /requirements.txt
 RUN Rscript -e 'install.packages(readLines("requirements.txt"))'
 
 RUN Rscript -e 'install.packages("civis")' && \
-	Rscript -e "library(civis)"
+  Rscript -e "library(civis)"
 
 ENV VERSION=3.3.0 \
     VERSION_MAJOR=3 \
