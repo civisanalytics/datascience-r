@@ -1,4 +1,4 @@
-FROM rocker/verse:3.6.1
+FROM rocker/verse:3.6.2
 MAINTAINER support@civisanalytics.com
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && \
@@ -6,11 +6,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
         curl \
         libudunits2-dev \
         libcairo-dev \
-        libgdal-dev \        
+        libgdal-dev \
         libgeos-dev \
         libglu1-mesa-dev \
         libx11-dev \
-        mesa-common-dev \        
+        mesa-common-dev \
+				libsodium-dev \
         wget && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -24,16 +25,15 @@ RUN curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
     rm -f get-pip.py
 
 # set cran to be default backup to set MRAN repo
-#RUN echo "options(repos = c(options('repos'), 'https://cran.rstudio.com/'), download.file.method = 'libcurl')" >> /usr/local/lib/R/etc/Rprofile.site
-
-RUN Rscript -e "devtools::install_github('civisanalytics/civis-r', ref = 'v2.1.2');"
+# RUN echo "options(repos = c(options('repos'), 'https://cran.rstudio.com/'), download.file.method = 'libcurl')" >> /usr/local/lib/R/etc/Rprofile.site
 
 COPY ./requirements.txt /requirements.txt
 RUN Rscript -e 'install.packages(readLines("requirements.txt"))'
 
-RUN Rscript -e "library(civis)"
+RUN Rscript -e 'install.packages("civis")' && \
+	Rscript -e "library(civis)"
 
-ENV VERSION=3.2.1 \
+ENV VERSION=3.3.0 \
     VERSION_MAJOR=3 \
-    VERSION_MINOR=2 \
-    VERSION_MICRO=1
+    VERSION_MINOR=3 \
+    VERSION_MICRO=0
