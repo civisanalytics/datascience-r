@@ -12,17 +12,16 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
         libsodium-dev \
         libx11-dev \
         mesa-common-dev \
+        python3-pip \
+        python3-setuptools \
         wget && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # tuck the python client here just in case
 COPY ./requirements-python.txt /requirements-python.txt
-RUN curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
-    python get-pip.py && \
-    pip install -r requirements-python.txt && \
-    rm -rf ~/.cache/pip && \
-    rm -f get-pip.py
+RUN pip3 install -r requirements-python.txt && \
+    rm -rf ~/.cache/pip    
 
 COPY ./requirements.txt /requirements.txt
 RUN Rscript -e 'install.packages(readLines("requirements.txt"))'
