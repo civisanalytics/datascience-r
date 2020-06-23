@@ -11,9 +11,12 @@ ggrepel
 glmnet
 gridExtra
 gsubfn
+gt
 htmltools
 leaflet
 maps
+packrat
+patchwork
 pROC
 ranger
 randomForest
