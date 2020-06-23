@@ -8,6 +8,12 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A minor version will increase if one or more packages contained in the Docker image add new, backwards-compatible features, or if a new package is added to the Docker image.
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompabile changes in the execution environment.
 
+## [4.0.0] - 2020-05-23
+
+- rocker/verse -> 4.0.0
+- python is removed
+- added patchwork, gt, and packrat R packages
+
 ## [3.3.0] - 2020-04-13
 
 - rocker/verse -> 3.6.2
