@@ -7,5 +7,5 @@ jobs:
      - run: docker build -t civisanalytics/datascience-r .
      - run: docker run civisanalytics/datascience-r /bin/bash -c "echo BUILDS OK"
      - run: docker run civisanalytics/datascience-r Rscript -e "sessionInfo(package=NULL)"
-     - run: docker run civisanalytics/datascience-r python -c "import civis; print(civis.__version__)"
+     - run: docker run civisanalytics/datascience-r python3 -c "import civis; print(civis.__version__)"
      - run: docker run civisanalytics/datascience-r Rscript -e "packageVersion('civis')"
