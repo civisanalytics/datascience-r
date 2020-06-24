@@ -11,8 +11,10 @@ Version number changes (major.minor.micro) in this package denote the following:
 ## [4.0.0] - 2020-05-23
 
 - rocker/verse -> 4.0.0
-- python is removed
+- python is removed, replaced by explicit calls to either python2 or python3
 - added patchwork, gt, and packrat R packages
+- civis-r -> 3.0.0
+- civis-python -> 1.14.0 (installed by default in python3)
 
 ## [3.3.0] - 2020-04-13
 
