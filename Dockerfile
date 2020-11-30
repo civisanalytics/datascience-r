@@ -1,4 +1,4 @@
-FROM rocker/verse:4.0.1
+FROM rocker/verse:4.0.2
 MAINTAINER support@civisanalytics.com
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && \
@@ -26,10 +26,7 @@ RUN pip3 install -r requirements-python.txt && \
 COPY ./requirements.txt /requirements.txt
 RUN Rscript -e 'install.packages(readLines("requirements.txt"))'
 
-RUN Rscript -e 'install.packages("civis", repos="https://cran.rstudio.com")' && \
-  Rscript -e "library(civis)"
-
-ENV VERSION=4.0.0 \
+ENV VERSION=4.0.2 \
     VERSION_MAJOR=4 \
     VERSION_MINOR=0 \
-    VERSION_MICRO=0
+    VERSION_MICRO=2
