@@ -26,6 +26,9 @@ RUN pip3 install -r requirements-python.txt && \
 COPY ./requirements.txt /requirements.txt
 RUN Rscript -e 'install.packages(readLines("requirements.txt"))'
 
+# install civis api client
+RUN Rscript -e 'install.packages("civis")'
+
 ENV VERSION=4.0.2 \
     VERSION_MAJOR=4 \
     VERSION_MINOR=0 \
