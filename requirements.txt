@@ -1,9 +1,14 @@
+aif360
+arrow
+aplpack
 car
 caret
 cli
+clock
 doParallel
 e1071
 extrafont
+feather
 forecast
 gbm
 glue
