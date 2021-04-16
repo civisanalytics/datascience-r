@@ -7,6 +7,9 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A micro version will increase if the only change in a release is incrementing micro versions (bugfix-only releases) on the packages contained in this image.
 - A minor version will increase if one or more packages contained in the Docker image add new, backwards-compatible features, or if a new package is added to the Docker image.
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompabile changes in the execution environment.
+## [4.0.4] - 2020-04-16
+
+- rocker/verse -> 4.0.4
 
 ## [4.0.2] - 2020-11-30
 

@@ -1,4 +1,4 @@
-FROM rocker/verse:4.0.2
+FROM rocker/verse:4.0.4
 MAINTAINER support@civisanalytics.com
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && \
@@ -29,7 +29,7 @@ RUN Rscript -e 'install.packages(readLines("requirements.txt"))'
 # install civis api client
 RUN Rscript -e 'install.packages("civis")'
 
-ENV VERSION=4.0.2 \
+ENV VERSION=4.0.4 \
     VERSION_MAJOR=4 \
     VERSION_MINOR=0 \
-    VERSION_MICRO=2
+    VERSION_MICRO=4
