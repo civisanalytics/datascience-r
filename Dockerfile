@@ -29,6 +29,9 @@ RUN Rscript -e 'install.packages(readLines("requirements.txt"))'
 # install civis api client
 RUN Rscript -e 'install.packages("civis")'
 
+# rocker/verse includes "fst" which has an AGPL license
+RUN Rscript -e 'remove.packages("fst")'
+
 ENV VERSION=4.0.4 \
     VERSION_MAJOR=4 \
     VERSION_MINOR=0 \
