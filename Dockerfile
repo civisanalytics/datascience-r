@@ -1,5 +1,6 @@
-FROM rocker/verse:4.0.4
-MAINTAINER support@civisanalytics.com
+ARG BUILDPLATFORM=linux/x86_64
+FROM --platform=${BUILDPLATFORM} rocker/verse:4.4.1
+LABEL org.opencontainers.image.authors="support@civisanalytics.com"
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && \
     apt-get install -y --no-install-recommends \
@@ -21,7 +22,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends && 
 # tuck the python client here just in case
 COPY ./requirements-python.txt /requirements-python.txt
 RUN pip3 install -r requirements-python.txt && \
-    rm -rf ~/.cache/pip    
+    rm -rf ~/.cache/pip
 
 COPY ./requirements.txt /requirements.txt
 RUN Rscript -e 'install.packages(readLines("requirements.txt"))'
@@ -32,7 +33,7 @@ RUN Rscript -e 'install.packages("civis")'
 # rocker/verse includes "fst" which has an AGPL license
 RUN Rscript -e 'remove.packages("fst")'
 
-ENV VERSION=4.0.4 \
-    VERSION_MAJOR=4 \
+ENV VERSION=6.0.0 \
+    VERSION_MAJOR=6 \
     VERSION_MINOR=0 \
-    VERSION_MICRO=4
+    VERSION_MICRO=0

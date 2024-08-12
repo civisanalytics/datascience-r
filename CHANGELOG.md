@@ -7,6 +7,12 @@ Version number changes (major.minor.micro) in this package denote the following:
 - A micro version will increase if the only change in a release is incrementing micro versions (bugfix-only releases) on the packages contained in this image.
 - A minor version will increase if one or more packages contained in the Docker image add new, backwards-compatible features, or if a new package is added to the Docker image.
 - A major version will increase if there are any backwards-incompatible changes in any of the packages contained in this Docker image, or any other backwards-incompabile changes in the execution environment.
+
+## [6.0.0] - 2024-08-06
+
+- rocker/verse -> 4.4.1
+- civis-python -> 2.3.0
+
 ## [5.0.0] - 2022-10-14
 
 - removed package `fst`
@@ -48,7 +54,7 @@ Version number changes (major.minor.micro) in this package denote the following:
 - civis-python -> 1.11.0
 
 ### Added
-- added buildspecs for autobuilding and pushing Docker image to Amazon ECR 
+- added buildspecs for autobuilding and pushing Docker image to Amazon ECR
 
 ## [3.0.0] - 2019-06-21
 

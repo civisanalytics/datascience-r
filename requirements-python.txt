@@ -1,3 +1,1 @@
-cbor2==4.1.2
-pubnub>=4.5
-civis
+civis>=2.3.0,<3
